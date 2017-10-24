@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://unpkg.com/vue"></script>
+  <title>Vue Components</title>
+</head>
+<body>
+  <div id="app">
+     <div class="container-fluid">
+       <ul class="list-group">
+        <post v-for="comment in comments" :post="comment" ></post>
+       </ul>
+       <div id="comment-box">
+         <div class="input-group">
+           <input
+              type="text"
+              placeholder="Enter a comment..."
+              v-model="comment"
+              class="form-control"
+              @keyup.enter="postComment">
+            <span class="input-group-btn">
+              <button
+                class="btn btn-primary"
+                type="button"
+                @click="postComment">
+                  Submit
+                </button>
+            </span>
+         </div>
+       </div>
+     </div>
+  </div>
+
+  <template id="post-template">
+    <li class="list-group-item">
+      <i class="glyphicon glyphicon-chevron-up" @click="upvote"></i>
+      <span class="label label-primary">{{ votes }}</span>
+       <i class="glyphicon glyphicon-chevron-down" @click="downvote"></i>
+      <a>{{ post.title }}</a>
+    </li>
+  </template>
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous">
+  </script>
+  <script
+    src=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js>
+  </script>
+  <script src="voter.js"></script>
+</body>
+</html>

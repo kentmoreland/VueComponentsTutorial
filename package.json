@@ -1,7 +1,7 @@
 {
   "name": "vue_components_tutorial",
   "scripts": {
-    "serve": "browser-sync start --index reddit-system.html --server --files '*.html, *.js, *.css'"
+    "serve": "browser-sync start --index comments.html --server --files '*.html, *.js, *.css'"
   },
   "devDependencies": {
     "browser-sync": "^2.18.13"

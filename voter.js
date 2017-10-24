@@ -33,17 +33,27 @@ Vue.component('post', {
 const vm = new Vue({
   el: '#app',
   data: {
-    posts: [{
-      title: 'A post for our reddit demo starting at 15 votes',
-      votes: 15
+    comments: [{
+      title: 'great article',
+      votes: 2
     },
     {
-      title: 'Try out the upvoting, it works, I promise',
-      votes: 53
+      title: 'VueJs commenting system with votes!',
+      votes: 5
     },
     {
-      title: 'Listening to Ed Sheeran right about now',
-      votes: 10
-    }]
+      title: 'The random pun that gets a lot of upvotes',
+      votes: 85
+    }],
+    comment: ''
+  },
+  methods: {
+    postComment: function() {
+      this.comments.push({
+        title: this.comment,
+        votes: 0
+      })
+      this.comment='';
+    }
   }
 });
