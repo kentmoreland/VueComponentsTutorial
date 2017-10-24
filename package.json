@@ -1,0 +1,9 @@
+{
+  "name": "vue_components_tutorial",
+  "scripts": {
+    "serve": "browser-sync start --server --files '*.html'"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.13"
+  }
+}
