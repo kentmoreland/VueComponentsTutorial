@@ -12,13 +12,21 @@
   <div id="app">
     <!-- My new component can be used multiple times -->
     <greeting></greeting>
-    <greeting></greeting>
-    <greeting></greeting>
   </div>
+
+  <template id="greeting-template">
+    <div>
+      <h1>Hi! I'm Kent</h1>
+      <button>login</button>
+      <button>signup</button>
+      <a href="https://www.linkedin.com/in/kentmoreland/">Say Hi on Linkedin</a>
+    </div>
+  </template>
+
 
   <script>
     Vue.component('greeting', {
-      template: '<h1> Hi, I\'m Kent!</h1>'
+      template: '#greeting-template'
     });
 
     const vm = new Vue({
