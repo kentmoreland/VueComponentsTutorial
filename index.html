@@ -3,9 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://unpkg.com/vue"></script>
   <title>Vue Components</title>
 </head>
 <body>
+  <!-- Tutorial site: https://coligo.io/vuejs-components/ -->
   <h1>Vuejs</h1>
+  <div id="app">
+    <!-- My new component can be used multiple times -->
+    <greeting></greeting>
+    <greeting></greeting>
+    <greeting></greeting>
+  </div>
+
+  <script>
+    Vue.component('greeting', {
+      template: '<h1> Hi, I\'m Kent!</h1>'
+    });
+
+    const vm = new Vue({
+      el: '#app'
+    });
+
+  </script>
 </body>
 </html>
