@@ -11,7 +11,9 @@
   <h1>Vuejs</h1>
   <div id="app">
     <!-- My new component can be used multiple times -->
-    <greeting></greeting>
+    <greeting message="Welcome to the VueJs Components Tutorial"></greeting>
+
+    <post :title="title" :author="author" :content="content"></post>
   </div>
 
   <template id="greeting-template">
@@ -23,14 +25,38 @@
     </div>
   </template>
 
+  <template id="post-template">
+    <div>
+      <h1>{{ title }}</h1>
+      <h4>{{ author }}</h4>
+      <p>{{ content }}</p>
+    </div>
+  </template>
+
 
   <script>
     Vue.component('greeting', {
-      template: '#greeting-template'
+      template: '#greeting-template',
+      props: {
+        message: {
+          type: String,
+          required: true
+        }
+      }
+    });
+
+    Vue.component('post', {
+      template: '#post-template',
+      props: ['title', 'author', 'content']
     });
 
     const vm = new Vue({
-      el: '#app'
+      el: '#app',
+      data: {
+        author: 'Johnnie Walker',
+        title: 'Aging Your Own Whisky',
+        content: 'A bunch of steps and a whole lot of content'
+      }
     });
 
   </script>
